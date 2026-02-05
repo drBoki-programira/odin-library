@@ -1,0 +1,60 @@
+:root {
+    --bg-clr: #161E54;
+    --prim-clr: #BBE0EF;
+    --sec-clr: #F16D34;
+    --ter-clr: #FF986A;
+    background-color: var(--bg-clr);
+    color: var(--prim-clr);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    background-color: var(--sec-clr);
+    border: var(--sec-clr) 10px ridge;
+    margin: auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    color: var(--bg-clr);
+}
+
+.show-form {
+    background-color: var(--bg-clr);
+    color: var(--sec-clr);
+    font-size: large;
+    font-weight: 500;
+    border: none;
+    border-radius: 50px;
+    padding: 5px 20px;
+}
+
+.bookshelf {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    gap: 50px;
+    place-content: center;
+    background-color: var(--ter-clr);
+    padding: 50px 0;
+    box-shadow: inset 10px 10px 10px var(--bg-clr);
+}
+
+.book-card {
+    background-color: var(--bg-clr);
+    border: var(--sec-clr) 4px solid;
+    border-radius: 0 6% 6% 0;
+    box-shadow: 5px 5px 10px var(--bg-clr);
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
