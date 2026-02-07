@@ -59,6 +59,23 @@
     justify-content: center;
 }
 
+.remove {
+    width: 20px;
+    position: relative;
+    top: -40px;
+    left: 190px;
+}
+
+.book-card svg {
+    height: 100px;
+}
+svg.read {
+    fill: green;
+}
+svg.not-read {
+    fill: gray;
+}
+
 dialog[open] {
     background-color: #F16D34;
     border: #BBE0EF 2px solid;
