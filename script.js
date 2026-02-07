@@ -1,6 +1,3 @@
-const myLibrary = []
-const bookshelf = document.querySelector(".bookshelf")
-
 function Book(title, author, pages, read) {
     this.title = title
     this.author = author
@@ -21,6 +18,7 @@ function addBookToLibrary(title, author, pages, read) {
 function display(book) {
     const bookCard = document.createElement("div")
     bookCard.setAttribute("class", "book-card")
+    
     const bookTitle = document.createElement("h3")
     bookTitle.setAttribute("class", "book-title")
     bookTitle.textContent = `"${book.title}"`
@@ -37,9 +35,30 @@ function display(book) {
     bookshelf.appendChild(bookCard)
 }
 
+const myLibrary = []
+const bookshelf = document.querySelector(".bookshelf")
+
+const openDialog = document.getElementById("open")
+const closeDialog = document.getElementById("cancel")
+const dialog = document.querySelector("dialog")
+const form = document.querySelector("form")
+
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false)
 addBookToLibrary("A Game of Thrones", "George R.R. Martin", 695, true)
 addBookToLibrary("Foundation", "Isaac Asimov", 300, true)
 addBookToLibrary("The Three-Body Problem", "Cixin Liu", 400, false)
 
 myLibrary.forEach(display)
+
+openDialog.addEventListener("click", () => dialog.showModal())
+closeDialog.addEventListener("click", () => dialog.close())
+dialog.addEventListener("close", () => {
+    if (dialog.returnValue === "add") {
+        const data = new FormData(form)
+        const newBook = Object.fromEntries(data)
+        const bookRead = newBook.read === "read"
+
+        addBookToLibrary(newBook["title"], newBook["author"], newBook["pages"], bookRead)
+        display(myLibrary.at(-1))
+    }
+})

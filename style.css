@@ -58,3 +58,42 @@
     flex-direction: column;
     justify-content: center;
 }
+
+dialog[open] {
+    background-color: #F16D34;
+    border: #BBE0EF 2px solid;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    margin: auto;
+}
+
+.dialog-title {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    font-size: 1.2rem;
+    padding: 5px;
+    gap: 5px;
+
+}
+
+.row label {
+    flex-basis: 30%;
+    text-align: right;
+}
+
+.read-row {
+    padding-left: 10%;
+    gap: 5px;
+    font-size: 1.2rem;
+}
+
+.submit {
+    margin-left: 70%;
+}
