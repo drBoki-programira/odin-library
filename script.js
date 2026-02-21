@@ -1,18 +1,21 @@
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.ID = crypto.randomUUID()
-    this.info = function() {
+class Book {
+    ID = crypto.randomUUID()
+
+    constructor(title, author, pages, read) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
+    
+    info() {
         const stringRead = (this.read) ? "read" : "not read yet"
         return `${this.title} by ${this.author}, ${this.pages} pages, ${stringRead}`
-  }
-}
+    }
 
-function addBookToLibrary(title, author, pages, read) {
-    const newBook = new Book(title, author, pages, read)
-    myLibrary.push(newBook)
+    static addToLibrary(book) {
+        myLibrary.push(book)
+    }
 }
 
 function addRemoveListener(bookCard) {
@@ -61,10 +64,10 @@ const closeDialog = document.getElementById("cancel")
 const dialog = document.querySelector("dialog")
 const form = document.querySelector("form")
 
-addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, false)
-addBookToLibrary("A Game of Thrones", "George R.R. Martin", 695, true)
-addBookToLibrary("Foundation", "Isaac Asimov", 300, true)
-addBookToLibrary("The Three-Body Problem", "Cixin Liu", 400, false)
+Book.addToLibrary(new Book("The Hobbit", "J.R.R. Tolkien", 295, false))
+Book.addToLibrary(new Book("A Game of Thrones", "George R.R. Martin", 695, true))
+Book.addToLibrary(new Book("Foundation", "Isaac Asimov", 300, true))
+Book.addToLibrary(new Book("The Three-Body Problem", "Cixin Liu", 400, false))
 
 myLibrary.forEach(display)
 
@@ -75,8 +78,9 @@ dialog.addEventListener("close", () => {
         const data = new FormData(form)
         const newBook = Object.fromEntries(data)
         const bookRead = newBook.read === "read"
+        const book = new Book(newBook["title"], newBook["author"], newBook["pages"], bookRead)
 
-        addBookToLibrary(newBook["title"], newBook["author"], newBook["pages"], bookRead)
+        Book.addToLibrary(book)
         display(myLibrary.at(-1))
     }
 })
