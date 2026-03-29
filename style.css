@@ -1,180 +1,185 @@
 :root {
-    --dark-blue: #161E54;
-    --light-blue: #BBE0EF;
-    --orange: #F16D34;
-    --light-orange: #FF986A;
-    background-color: var(--dark-blue);
-    color: var(--light-blue);
+  --dark-blue: #161e54;
+  --light-blue: #bbe0ef;
+  --orange: #f16d34;
+  --light-orange: #ff986a;
+  background-color: var(--dark-blue);
+  color: var(--light-blue);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Marck Script";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Marck Script";
 }
 
 .main-container {
-    background-color: var(--orange);
-    border: var(--orange) 10px ridge;
-    margin: auto;
-    max-width: 1200px;
-    min-height: 100vh;
-    text-align: center;
+  background-color: var(--orange);
+  border: var(--orange) 10px ridge;
+  margin: auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  text-align: center;
 }
 
 .header {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    color: var(--dark-blue);
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  color: var(--dark-blue);
 }
 
 #open {
-    background-color: var(--dark-blue);
-    color: var(--orange);
-    font-size: large;
-    font-weight: 700;
-    border: var(--light-orange) 2px outset;
-    border-radius: 50px;
-    padding: 5px 20px;
+  background-color: var(--dark-blue);
+  color: var(--orange);
+  font-size: large;
+  font-weight: 700;
+  border: var(--light-orange) 2px outset;
+  border-radius: 50px;
+  padding: 5px 20px;
 }
 #open:hover,
 #confirm:hover,
 #cancel:hover {
-    background-color: #2b3999;
+  background-color: #2b3999;
 }
 
 .bookshelf {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 250px);
-    gap: 50px;
-    place-content: center;
-    height: 80%;
-    background-color: var(--light-orange);
-    padding: 50px 0;
-    box-shadow: inset 10px 10px 10px var(--dark-blue);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  gap: 50px;
+  place-content: center;
+  height: 80%;
+  background-color: var(--light-orange);
+  padding: 50px 0;
+  box-shadow: inset 10px 10px 10px var(--dark-blue);
 }
 
 .book-card {
-    background-color: var(--dark-blue);
-    border: var(--orange) 4px solid;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px var(--dark-blue);
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background-color: var(--dark-blue);
+  border: var(--orange) 4px solid;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px var(--dark-blue);
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .remove {
-    background-color: var(--orange);
-    color: var(--dark-blue);
-    border: none;
-    border-radius: 50%;
-    font-size: 20px;
-    font-weight: 700;
-    height: 35px;
-    width: 35px;
-    position: relative;
-    top: -40px;
-    left: 190px;
+  background-color: var(--orange);
+  color: var(--dark-blue);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  height: 35px;
+  width: 35px;
+  position: relative;
+  top: -40px;
+  left: 190px;
 }
 .remove:hover {
-    background-color: var(--light-orange);
+  background-color: var(--light-orange);
 }
 
 .book-card svg {
-    height: 100px;
+  height: 100px;
 }
 svg.read {
-    fill: rgb(41, 129, 41);
+  fill: rgb(41, 129, 41);
 }
 svg.not-read {
-    fill: gray;
+  fill: gray;
 }
 
 dialog[open] {
-    background-color: var(--orange);
-    color: var(--dark-blue);
-    border: var(--light-orange) 2px solid;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 20px;
-    margin: auto;
+  background-color: var(--orange);
+  color: var(--dark-blue);
+  border: var(--light-orange) 2px solid;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  margin: auto;
 }
 
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .dialog-title {
-    display: flex;
-    justify-content: space-around;
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 10px;
 }
 
 hr {
-    border: none;
-    height: 2px;
-    background-color: var(--light-orange);
-    margin: 5px;
+  border: none;
+  height: 2px;
+  background-color: var(--light-orange);
+  margin: 5px;
 }
 
 #cancel {
-    background-color: var(--dark-blue);
-    border: var(--light-orange) 4px outset;
-    color: var(--orange);
-    border: none;
-    border-radius: 50%;
-    font-size: 1.3rem;
-    font-weight: 700;
-    height: 30px;
-    width: 30px;
+  background-color: var(--dark-blue);
+  border: var(--light-orange) 4px outset;
+  color: var(--orange);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  height: 30px;
+  width: 30px;
 }
 
 #confirm {
-    background-color: var(--dark-blue);
-    border: var(--light-orange) 2px outset;
-    border-radius: 5px;
-    color: var(--orange);
-    margin-left: 65%;
-    font-size: 1.2rem;
-    padding: 5px 20px;
+  background-color: var(--dark-blue);
+  border: var(--light-orange) 2px outset;
+  border-radius: 5px;
+  color: var(--orange);
+  margin-left: 65%;
+  font-size: 1.2rem;
+  padding: 5px 20px;
 }
 
 .row {
-    display: flex;
-    font-size: 1.2rem;
-    padding: 5px;
-    gap: 5px;
-
+  display: flex;
+  font-size: 1.2rem;
+  padding: 5px;
+  gap: 5px;
 }
 
 .row input {
-    background-color: var(--light-orange);
-    border: none;
-    border-radius: 5px;
-    padding: 2px;
-    color: var(--dark-blue);
+  background-color: var(--light-orange);
+  border: none;
+  border-radius: 5px;
+  padding: 2px;
+  color: var(--dark-blue);
+}
+input:focus {
+  outline: 2px solid var(--dark-blue);
+}
+input:invalid {
+  outline: 2px solid rgb(218, 18, 18);
 }
 
 .row label {
-    flex-basis: 30%;
-    text-align: right;
+  flex-basis: 30%;
+  text-align: right;
 }
 
 .read-row {
-    gap: 5px;
-    font-size: 1.2rem;
+  gap: 5px;
+  font-size: 1.2rem;
 }
 .read-row input {
-    background-color: var(--light-orange);
-    accent-color: var(--dark-blue);
+  background-color: var(--light-orange);
+  accent-color: var(--dark-blue);
 }
 
 .submit {
-    margin-left: 70%;
+  margin-left: 70%;
 }

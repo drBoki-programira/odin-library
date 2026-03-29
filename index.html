@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap"
+      rel="stylesheet"
+    />
     <title>Library app</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="main-container">
-        <div class="header">
-            <h1>My Awesome Library</h1>
-            <button id="open">Add Book</button>
-        </div>
-        <div class="bookshelf"></div>
+      <div class="header">
+        <h1>My Awesome Library</h1>
+        <button id="open">Add Book</button>
+      </div>
+      <div class="bookshelf"></div>
     </div>
     <dialog>
-        <div class="dialog-title">
-            Add New Book
-            <button id="cancel">X</button>
+      <div class="dialog-title">
+        Add New Book
+        <button id="cancel">X</button>
+      </div>
+      <hr />
+      <form method="dialog">
+        <div class="row">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" autofocus required />
         </div>
-        <hr>
-        <form method="dialog">
-            <div class="row">
-                <label for="title">Title:</label>
-                <input type="text" id="title" name="title" autofocus required>
-            </div>
-            <div class="row">
-                <label for="author">Author:</label>
-                <input type="text" id="author" name="author" required>
-            </div>
-            <div class="row">
-                <label for="pages">Pages:</label>
-                <input type="number" id="pages" name="pages" min="1" required>
-            </div>
-            <div class="read-row">
-                <label for="read">Have your read the book?</label>
-                <input type="checkbox" id="read" name="read" value="read">
-            </div>
-            <hr>
-            <button id="confirm" type="submit" value="add">Add</button>
-        </form>
+        <div class="row">
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" required />
+        </div>
+        <div class="row">
+          <label for="pages">Pages:</label>
+          <input type="number" id="pages" name="pages" min="1" required />
+        </div>
+        <div class="read-row">
+          <label for="read">Have your read the book?</label>
+          <input type="checkbox" id="read" name="read" value="read" />
+        </div>
+        <hr />
+        <button id="confirm" type="submit" value="add">Add</button>
+      </form>
     </dialog>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
